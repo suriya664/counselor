@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Dashboard - Resume & Job Tracker | Counselor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .dashboard-container {
+      background: #f8f9fa;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .dashboard-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .stats-card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .stats-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stats-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #667eea;
+    }
+
+    .upload-area {
+      border: 3px dashed #667eea;
+      border-radius: 10px;
+      padding: 40px;
+      text-align: center;
+      background: white;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .upload-area:hover {
+      background: #f8f9ff;
+      border-color: #764ba2;
+    }
+
+    .upload-area.dragover {
+      background: #e8ebff;
+      border-color: #4c5fd5;
+    }
+
+    .job-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #667eea;
+    }
+
+    .job-card.status-applied {
+      border-left-color: #28a745;
+    }
+
+    .job-card.status-interview {
+      border-left-color: #ffc107;
+    }
+
+    .job-card.status-offered {
+      border-left-color: #17a2b8;
+    }
+
+    .job-card.status-rejected {
+      border-left-color: #dc3545;
+    }
+
+    .status-badge {
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .status-applied {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .status-interview {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .status-offered {
+      background: #d1ecf1;
+      color: #0c5460;
+    }
+
+    .status-rejected {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .btn-dashboard {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn-dashboard:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      color: white;
+    }
+
+    .file-list {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .file-item {
+      background: #f8f9fa;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .form-control-dashboard {
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      padding: 12px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-control-dashboard:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    }
+
+    .progress-bar-custom {
+      height: 8px;
+      background: #e9ecef;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      transition: width 0.3s ease;
+    }
+
+    .dashboard-top-bar {
+      background: #fff;
+      padding: 15px 0;
+      border-bottom: 1px solid #e9ecef;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .dashboard-logo h2 {
+      transition: color 0.3s ease;
+    }
+
+    .dashboard-logo:hover h2 {
+      color: #059669 !important;
+    }
+
+    .btn-logout {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-logout:hover {
+      background: linear-gradient(135deg, #c82333 0%, #bd2130 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+      color: white;
+    }
+
+    .theme-toggle-dashboard {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 15px;
+    }
+
+    .theme-toggle-dashboard button {
+      background: transparent;
+      border: 1px solid #667eea;
+      color: #667eea;
+      padding: 6px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle-dashboard button:hover {
+      background: #667eea;
+      color: white;
+    }
+
+    .rtl-mode {
+      direction: rtl;
+    }
+
+    .rtl-mode .text-right {
+      text-align: left !important;
+    }
+
+    .rtl-mode .text-left {
+      text-align: right !important;
+    }
+
+    .dark-mode {
+      background-color: #1a1a1a;
+      color: #ffffff;
+    }
+
+    .dark-mode .dashboard-top-bar {
+      background-color: #2d2d2d !important;
+      border-bottom-color: #475569 !important;
+    }
+
+    .dark-mode .dashboard-container {
+      background-color: #1a1a1a !important;
+    }
+
+    .dark-mode .dashboard-header {
+      background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%) !important;
+    }
+
+    .dark-mode .stats-card {
+      background-color: #2d2d2d !important;
+      color: #ffffff !important;
+    }
+
+    .dark-mode .upload-area {
+      background-color: #2d2d2d !important;
+      border-color: #667eea !important;
+    }
+
+    .dark-mode .job-card {
+      background-color: #2d2d2d !important;
+      color: #ffffff !important;
+    }
+
+    .dark-mode .form-control-dashboard {
+      background-color: #2d2d2d !important;
+      border-color: #475569 !important;
+      color: #ffffff !important;
+    }
+
+    .dark-mode .modal-content {
+      background-color: #2d2d2d !important;
+      color: #ffffff !important;
+    }
+
+    .dark-mode .dashboard-logo h2 {
+      color: #ffffff !important;
+    }
+
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode h3,
+    .dark-mode h4,
+    .dark-mode h5,
+    .dark-mode h6 {
+      color: #ffffff !important;
+    }
+
+    .dark-mode p {
+      color: #cccccc !important;
+    }
+
+    .dark-mode .text-muted {
+      color: #999999 !important;
+    }
+
+    /* Blog date styling - make black color */
+    .blog-entry .meta .day,
+    .blog-entry .meta .mos,
+    .blog-entry .meta .yr {
+      color: #000000 !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Counselor</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="counselor.html" class="nav-link">Counselor</a></li>
+          <li class="nav-item active"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="login.html" class="btn btn-primary nav-link-btn">Login</a></li>
+          <li class="nav-item"><a href="register.html" class="btn btn-outline-primary nav-link-btn">Register</a></li>
+          <li class="nav-item theme-toggle">
+            <button id="rtl-toggle" title="Toggle RTL">RTL</button>
+            <button id="theme-toggle" title="Toggle Dark/Light Mode">
+              <span id="theme-icon">🌙</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-container">
+    <div class="container">
+      <div class="dashboard-header">
+        <h1 class="mb-3">Job Search Dashboard</h1>
+        <p class="mb-0">Track your job applications and manage your resumes</p>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-md-3">
+          <div class="stats-card text-center">
+            <div class="stats-number" id="totalApplications">0</div>
+            <p class="mb-0 text-muted">Total Applications</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-card text-center">
+            <div class="stats-number" id="interviewCount">0</div>
+            <p class="mb-0 text-muted">Interviews</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-card text-center">
+            <div class="stats-number" id="offerCount">0</div>
+            <p class="mb-0 text-muted">Offers</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-card text-center">
+            <div class="stats-number" id="resumeCount">0</div>
+            <p class="mb-0 text-muted">Resumes</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="stats-card">
+            <h3 class="mb-4">Resume Upload</h3>
+            <div class="upload-area" id="uploadArea">
+              <i class="fa fa-cloud-upload fa-3x mb-3" style="color: #667eea;"></i>
+              <h4>Drop your resume here</h4>
+              <p class="text-muted">or click to browse</p>
+              <p class="text-muted small">Supported: PDF, DOC, DOCX (Max 5MB)</p>
+              <input type="file" id="fileInput" accept=".pdf,.doc,.docx" style="display: none;" multiple>
+            </div>
+            <div class="file-list mt-3" id="fileList"></div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="stats-card">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h3 class="mb-0">Job Applications</h3>
+              <button class="btn-dashboard" onclick="openJobModal()">
+                <i class="fa fa-plus mr-2"></i>Add Application
+              </button>
+            </div>
+            <div id="jobList"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <div class="stats-card">
+            <h3 class="mb-4">Application Progress</h3>
+            <div class="row">
+              <div class="col-md-3">
+                <p class="mb-2">Applied</p>
+                <div class="progress-bar-custom">
+                  <div class="progress-fill" id="appliedProgress" style="width: 0%;"></div>
+                </div>
+                <p class="text-muted small" id="appliedPercent">0%</p>
+              </div>
+              <div class="col-md-3">
+                <p class="mb-2">Interview</p>
+                <div class="progress-bar-custom">
+                  <div class="progress-fill" id="interviewProgress" style="width: 0%;"></div>
+                </div>
+                <p class="text-muted small" id="interviewPercent">0%</p>
+              </div>
+              <div class="col-md-3">
+                <p class="mb-2">Offered</p>
+                <div class="progress-bar-custom">
+                  <div class="progress-fill" id="offeredProgress" style="width: 0%;"></div>
+                </div>
+                <p class="text-muted small" id="offeredPercent">0%</p>
+              </div>
+              <div class="col-md-3">
+                <p class="mb-2">Success Rate</p>
+                <div class="progress-bar-custom">
+                  <div class="progress-fill" id="successProgress" style="width: 0%;"></div>
+                </div>
+                <p class="text-muted small" id="successPercent">0%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="jobModal">
+    <div class="modal-content">
+      <h3 class="mb-4">Add Job Application</h3>
+      <form id="jobForm">
+        <div class="form-group">
+          <label>Company Name</label>
+          <input type="text" class="form-control form-control-dashboard" id="companyName" required>
+        </div>
+        <div class="form-group">
+          <label>Position</label>
+          <input type="text" class="form-control form-control-dashboard" id="position" required>
+        </div>
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" class="form-control form-control-dashboard" id="location">
+        </div>
+        <div class="form-group">
+          <label>Status</label>
+          <select class="form-control form-control-dashboard" id="status">
+            <option value="applied">Applied</option>
+            <option value="interview">Interview</option>
+            <option value="offered">Offered</option>
+            <option value="rejected">Rejected</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Application Date</label>
+          <input type="date" class="form-control form-control-dashboard" id="applicationDate" required>
+        </div>
+        <div class="form-group">
+          <label>Notes</label>
+          <textarea class="form-control form-control-dashboard" id="notes" rows="3"></textarea>
+        </div>
+        <div class="d-flex justify-content-between">
+          <button type="button" class="btn btn-secondary" onclick="closeJobModal()">Cancel</button>
+          <button type="submit" class="btn-dashboard">Add Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="ftco-footer">
+    <div class="container-fluid px-0 py-5 bg-black">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="mb-0 text-center" style="color: rgba(255,255,255,.5);">Copyright &copy;2026 All rights reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    let resumes = JSON.parse(localStorage.getItem('resumes')) || [];
+    let jobApplications = JSON.parse(localStorage.getItem('jobApplications')) || [];
+
+    document.addEventListener('DOMContentLoaded', function () {
+      initializeDashboard();
+      setupFileUpload();
+      setupJobForm();
+      updateDashboard();
+    });
+
+    function initializeDashboard() {
+      const uploadArea = document.getElementById('uploadArea');
+      const fileInput = document.getElementById('fileInput');
+
+      uploadArea.addEventListener('click', () => fileInput.click());
+
+      uploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadArea.classList.add('dragover');
+      });
+
+      uploadArea.addEventListener('dragleave', () => {
+        uploadArea.classList.remove('dragover');
+      });
+
+      uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadArea.classList.remove('dragover');
+        handleFiles(e.dataTransfer.files);
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        handleFiles(e.target.files);
+      });
+
+      document.getElementById('jobModal').addEventListener('click', (e) => {
+        if (e.target.id === 'jobModal') {
+          closeJobModal();
+        }
+      });
+    }
+
+    function setupFileUpload() {
+      // File upload functionality is handled in initializeDashboard
+    }
+
+    function setupJobForm() {
+      document.getElementById('jobForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        addJobApplication();
+      });
+    }
+
+    function handleFiles(files) {
+      const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      const maxSize = 5 * 1024 * 1024; // 5MB
+
+      Array.from(files).forEach(file => {
+        if (!validTypes.includes(file.type)) {
+          alert(`Invalid file type: ${file.name}. Only PDF, DOC, and DOCX files are allowed.`);
+          return;
+        }
+
+        if (file.size > maxSize) {
+          alert(`File too large: ${file.name}. Maximum size is 5MB.`);
+          return;
+        }
+
+        const resume = {
+          id: Date.now() + Math.random(),
+          name: file.name,
+          size: (file.size / 1024).toFixed(2) + ' KB',
+          uploadDate: new Date().toLocaleDateString(),
+          type: file.type
+        };
+
+        resumes.push(resume);
+        localStorage.setItem('resumes', JSON.stringify(resumes));
+        displayResumes();
+        updateDashboard();
+      });
+
+      document.getElementById('fileInput').value = '';
+    }
+
+    function displayResumes() {
+      const fileList = document.getElementById('fileList');
+
+      if (resumes.length === 0) {
+        fileList.innerHTML = '<p class="text-muted text-center">No resumes uploaded yet</p>';
+        return;
+      }
+
+      fileList.innerHTML = resumes.map(resume => `
+          <div class="file-item">
+            <div>
+              <i class="fa fa-file-text-o mr-2"></i>
+              <strong>${resume.name}</strong>
+              <small class="text-muted">(${resume.size})</small>
+            </div>
+            <button class="btn btn-sm btn-outline-danger" onclick="deleteResume(${resume.id})">
+              <i class="fa fa-trash"></i>
+            </button>
+          </div>
+        `).join('');
+    }
+
+    function deleteResume(id) {
+      resumes = resumes.filter(r => r.id !== id);
+      localStorage.setItem('resumes', JSON.stringify(resumes));
+      displayResumes();
+      updateDashboard();
+    }
+
+    function openJobModal() {
+      document.getElementById('jobModal').style.display = 'block';
+      document.getElementById('applicationDate').value = new Date().toISOString().split('T')[0];
+    }
+
+    function closeJobModal() {
+      document.getElementById('jobModal').style.display = 'none';
+      document.getElementById('jobForm').reset();
+    }
+
+    function addJobApplication() {
+      const application = {
+        id: Date.now() + Math.random(),
+        companyName: document.getElementById('companyName').value,
+        position: document.getElementById('position').value,
+        location: document.getElementById('location').value,
+        status: document.getElementById('status').value,
+        applicationDate: document.getElementById('applicationDate').value,
+        notes: document.getElementById('notes').value
+      };
+
+      jobApplications.push(application);
+      localStorage.setItem('jobApplications', JSON.stringify(jobApplications));
+
+      closeJobModal();
+      displayJobs();
+      updateDashboard();
+    }
+
+    function displayJobs() {
+      const jobList = document.getElementById('jobList');
+
+      if (jobApplications.length === 0) {
+        jobList.innerHTML = '<p class="text-muted text-center">No job applications yet</p>';
+        return;
+      }
+
+      const sortedJobs = [...jobApplications].sort((a, b) => new Date(b.applicationDate) - new Date(a.applicationDate));
+
+      jobList.innerHTML = sortedJobs.slice(0, 5).map(job => `
+          <div class="job-card status-${job.status}">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <h5 class="mb-1">${job.position}</h5>
+                <p class="mb-1"><strong>${job.companyName}</strong></p>
+                <p class="mb-1 text-muted">${job.location || 'Location not specified'}</p>
+                <p class="mb-0 small text-muted">Applied: ${new Date(job.applicationDate).toLocaleDateString()}</p>
+                ${job.notes ? `<p class="mb-0 small mt-2">${job.notes}</p>` : ''}
+              </div>
+              <div class="text-right">
+                <span class="status-badge status-${job.status}">${job.status.charAt(0).toUpperCase() + job.status.slice(1)}</span>
+                <div class="mt-2">
+                  <button class="btn btn-sm btn-outline-primary" onclick="editJob(${job.id})">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" onclick="deleteJob(${job.id})">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join('');
+
+      if (jobApplications.length > 5) {
+        jobList.innerHTML += '<p class="text-center text-muted mt-3">Showing latest 5 applications</p>';
+      }
+    }
+
+    function deleteJob(id) {
+      jobApplications = jobApplications.filter(j => j.id !== id);
+      localStorage.setItem('jobApplications', JSON.stringify(jobApplications));
+      displayJobs();
+      updateDashboard();
+    }
+
+    function editJob(id) {
+      const job = jobApplications.find(j => j.id === id);
+      if (job) {
+        document.getElementById('companyName').value = job.companyName;
+        document.getElementById('position').value = job.position;
+        document.getElementById('location').value = job.location;
+        document.getElementById('status').value = job.status;
+        document.getElementById('applicationDate').value = job.applicationDate;
+        document.getElementById('notes').value = job.notes;
+
+        deleteJob(id);
+        openJobModal();
+      }
+    }
+
+    function updateDashboard() {
+      const totalApps = jobApplications.length;
+      const interviews = jobApplications.filter(j => j.status === 'interview').length;
+      const offers = jobApplications.filter(j => j.status === 'offered').length;
+      const totalResumes = resumes.length;
+
+      document.getElementById('totalApplications').textContent = totalApps;
+      document.getElementById('interviewCount').textContent = interviews;
+      document.getElementById('offerCount').textContent = offers;
+      document.getElementById('resumeCount').textContent = totalResumes;
+
+      updateProgress();
+      displayResumes();
+      displayJobs();
+    }
+
+    function updateProgress() {
+      const total = jobApplications.length;
+      if (total === 0) {
+        document.getElementById('appliedProgress').style.width = '0%';
+        document.getElementById('interviewProgress').style.width = '0%';
+        document.getElementById('offeredProgress').style.width = '0%';
+        document.getElementById('successProgress').style.width = '0%';
+
+        document.getElementById('appliedPercent').textContent = '0%';
+        document.getElementById('interviewPercent').textContent = '0%';
+        document.getElementById('offeredPercent').textContent = '0%';
+        document.getElementById('successPercent').textContent = '0%';
+        return;
+      }
+
+      const applied = jobApplications.filter(j => j.status === 'applied').length;
+      const interviews = jobApplications.filter(j => j.status === 'interview').length;
+      const offers = jobApplications.filter(j => j.status === 'offered').length;
+
+      const appliedPercent = Math.round((applied / total) * 100);
+      const interviewPercent = Math.round((interviews / total) * 100);
+      const offeredPercent = Math.round((offers / total) * 100);
+      const successPercent = Math.round((offers / total) * 100);
+
+      document.getElementById('appliedProgress').style.width = appliedPercent + '%';
+      document.getElementById('interviewProgress').style.width = interviewPercent + '%';
+      document.getElementById('offeredProgress').style.width = offeredPercent + '%';
+      document.getElementById('successProgress').style.width = successPercent + '%';
+
+      document.getElementById('appliedPercent').textContent = appliedPercent + '%';
+      document.getElementById('interviewPercent').textContent = interviewPercent + '%';
+      document.getElementById('offeredPercent').textContent = offeredPercent + '%';
+      document.getElementById('successPercent').textContent = successPercent + '%';
+    }
+
+    function logout() {
+      // Clear any stored user data
+      localStorage.removeItem('userSession');
+      localStorage.removeItem('userToken');
+
+      // Show confirmation message
+      if (confirm('Are you sure you want to logout?')) {
+        // Redirect to login page or home page
+        window.location.href = 'index.html';
+      }
+    }
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const body = document.body;
+    const html = document.documentElement;
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    const savedRtl = localStorage.getItem('rtl');
+
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      themeIcon.textContent = '☀️';
+    }
+
+    if (savedRtl === 'true') {
+      body.classList.add('rtl-mode');
+      html.setAttribute('dir', 'rtl');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      themeIcon.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    rtlToggle.addEventListener('click', () => {
+      body.classList.toggle('rtl-mode');
+      const isRtl = body.classList.contains('rtl-mode');
+      html.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+      localStorage.setItem('rtl', isRtl ? 'true' : 'false');
+    });
+  </script>
+</body>
+
+</html>

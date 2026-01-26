@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Counselor - Modern Vibrant Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      --warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      --dark-gradient: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+      --light-bg: #f8fafc;
+      --white: #ffffff;
+      --text-dark: #1a202c;
+      --text-light: #718096;
+      --border-light: #e2e8f0;
+      --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-large: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    .theme-toggle {
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .theme-toggle button {
+      background: transparent;
+      border: 1px solid #667eea;
+      color: #667eea;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .theme-toggle button:hover {
+      background: #667eea;
+      color: white;
+    }
+
+    .dark-mode .theme-toggle button {
+      border-color: #667eea !important;
+      color: #667eea !important;
+    }
+
+    .dark-mode .theme-toggle button:hover {
+      background-color: #667eea !important;
+      color: white !important;
+    }
+
+    .dark-mode .navbar-nav .nav-link {
+      color: #ffffff !important;
+    }
+
+    .dark-mode .navbar-nav .nav-link:hover {
+      color: #667eea !important;
+    }
+
+    .dark-mode .navbar-nav .nav-item.active .nav-link {
+      color: #667eea !important;
+    }
+
+    .dark-mode .btn-primary {
+      background-color: #667eea !important;
+      border-color: #667eea !important;
+      color: white !important;
+    }
+
+    .dark-mode .btn-outline-primary {
+      border-color: #667eea !important;
+      color: #667eea !important;
+    }
+
+    .dark-mode .btn-outline-primary:hover {
+      background-color: #667eea !important;
+      color: white !important;
+    }
+
+    /* Blog date styling - make black color */
+    .blog-entry .meta .day,
+    .blog-entry .meta .mos,
+    .blog-entry .meta .yr {
+      color: #000000 !important;
+    }
+
+    /* Comprehensive dark mode styles */
+    .dark-mode {
+      background-color: #1a1a1a;
+      color: #ffffff;
+    }
+
+    .dark-mode .navbar {
+      background-color: #2d2d2d !important;
+    }
+
+    .dark-mode .navbar-brand {
+      color: #ffffff !important;
+    }
+
+    .dark-mode body,
+    .dark-mode .container,
+    .dark-mode .row,
+    .dark-mode .col-md-*,
+    .dark-mode .col-lg-*,
+    .dark-mode .col-sm-* {
+      color: #ffffff !important;
+    }
+
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode h3,
+    .dark-mode h4,
+    .dark-mode h5,
+    .dark-mode h6 {
+      color: #ffffff !important;
+    }
+
+    .dark-mode p {
+      color: #cccccc !important;
+    }
+
+    .dark-mode .hero-section {
+      background: linear-gradient(135deg, #2d3748 0%, #1a202c 50%, #2d3748 100%) !important;
+    }
+
+    .dark-mode .features-section {
+      background-color: #2d2d2d !important;
+    }
+
+    .dark-mode .feature-card {
+      background-color: #404040 !important;
+      border: 1px solid #667eea !important;
+    }
+
+    .dark-mode .feature-title {
+      color: #ffffff !important;
+    }
+
+    .dark-mode .feature-description {
+      color: #cccccc !important;
+    }
+
+    .dark-mode .stats-section {
+      background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%) !important;
+    }
+
+    .dark-mode .cta-section {
+      background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%) !important;
+    }
+
+    .dark-mode .modern-footer {
+      background: #1a1a1a !important;
+    }
+
+    .dark-mode .footer-section a {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .dark-mode .footer-section a:hover {
+      color: #ffffff !important;
+    }
+
+    /* Hero Section with Animated Background */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      overflow: hidden;
+      margin-top: 70px;
+    }
+
+    .hero-bg-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .shape-1 {
+      width: 300px;
+      height: 300px;
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .shape-2 {
+      width: 200px;
+      height: 200px;
+      top: 60%;
+      right: 10%;
+      animation-delay: 5s;
+    }
+
+    .shape-3 {
+      width: 150px;
+      height: 150px;
+      bottom: 20%;
+      left: 30%;
+      animation-delay: 10s;
+    }
+
+    .shape-4 {
+      width: 250px;
+      height: 250px;
+      top: 30%;
+      right: 30%;
+      animation-delay: 15s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      33% {
+        transform: translateY(-30px) rotate(120deg);
+      }
+
+      66% {
+        transform: translateY(30px) rotate(240deg);
+      }
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      animation: slideInLeft 1s ease-out;
+    }
+
+    .hero-text p {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+      animation: slideInLeft 1s ease-out 0.2s both;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: slideInLeft 1s ease-out 0.4s both;
+    }
+
+    .btn-hero {
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-hero-primary {
+      background: white;
+      color: #667eea;
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-hero-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-hero-secondary:hover {
+      background: white;
+      color: #667eea;
+      transform: translateY(-3px);
+    }
+
+    .hero-visual {
+      position: relative;
+      animation: slideInRight 1s ease-out;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--shadow-large);
+      backdrop-filter: blur(10px);
+      transform: rotate(3deg);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-card:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+
+    .hero-card-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--success-gradient);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: white;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Features Section */
+    .features-section {
+      padding: 6rem 0;
+      background: white;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-subtitle {
+      color: #667eea;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-description {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--shadow-medium);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary-gradient);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-large);
+    }
+
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .feature-icon.gradient-1 {
+      background: var(--primary-gradient);
+    }
+
+    .feature-icon.gradient-2 {
+      background: var(--secondary-gradient);
+    }
+
+    .feature-icon.gradient-3 {
+      background: var(--accent-gradient);
+    }
+
+    .feature-icon.gradient-4 {
+      background: var(--success-gradient);
+    }
+
+    .feature-icon.gradient-5 {
+      background: var(--warning-gradient);
+    }
+
+    .feature-icon.gradient-6 {
+      background: var(--dark-gradient);
+    }
+
+    .feature-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+
+    .feature-description {
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      padding: 4rem 0;
+      background: var(--primary-gradient);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      color: white;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-description {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      background: white;
+      color: #f5576c;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-size: 1.1rem;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    .modern-footer {
+      background: var(--text-dark);
+      color: white;
+      padding: 3rem 0 1rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--primary-gradient);
+      transform: translateY(-3px);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Counselor</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item active"><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="counselor.html" class="nav-link">Counselor</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="login.html" class="btn btn-primary nav-link-btn">Login</a></li>
+          <li class="nav-item"><a href="register.html" class="btn btn-outline-primary nav-link-btn">Register</a></li>
+          <li class="nav-item theme-toggle">
+            <button id="rtl-toggle" title="Toggle RTL">RTL</button>
+            <button id="theme-toggle" title="Toggle Dark/Light Mode">
+              <span id="theme-icon">🌙</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-bg-animation">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+      <div class="floating-shape shape-4"></div>
+    </div>
+
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Transform Your Life Through Professional Counseling</h1>
+          <p>Discover the power of expert guidance and personalized support to overcome life's challenges and achieve
+            your full potential.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn-hero btn-hero-primary">
+              <i class="fas fa-calendar-check mr-2"></i>Book Session
+            </a>
+            <a href="#features" class="btn-hero btn-hero-secondary">
+              <i class="fas fa-play-circle mr-2"></i>Watch Intro
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>Start Your Journey Today</h3>
+            <p>Join thousands who have transformed their lives through our expert counseling services.</p>
+            <div class="mt-3">
+              <small><strong>4.9/5</strong> ⭐⭐⭐⭐⭐ (2,341 reviews)</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="features">
+    <div class="section-header">
+      <div class="section-subtitle">Our Services</div>
+      <h2 class="section-title">Comprehensive Counseling Solutions</h2>
+      <p class="section-description">We offer a wide range of specialized counseling services designed to meet your
+        unique needs and help you achieve lasting positive change.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon gradient-1">
+          <i class="fas fa-user-friends"></i>
+        </div>
+        <h3 class="feature-title">Individual Therapy</h3>
+        <p class="feature-description">Personalized one-on-one counseling sessions tailored to your specific needs and
+          goals in a safe, confidential environment.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon gradient-2">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3 class="feature-title">Couples Counseling</h3>
+        <p class="feature-description">Strengthen your relationship through expert guidance, improved communication, and
+          deeper understanding between partners.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon gradient-3">
+          <i class="fas fa-home"></i>
+        </div>
+        <h3 class="feature-title">Family Therapy</h3>
+        <p class="feature-description">Build stronger family bonds and resolve conflicts through structured family
+          counseling sessions and proven techniques.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon gradient-4">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <h3 class="feature-title">Career Coaching</h3>
+        <p class="feature-description">Navigate career transitions, find your passion, and achieve professional success
+          with specialized career counseling.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon gradient-5">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3 class="feature-title">Academic Support</h3>
+        <p class="feature-description">Overcome academic challenges, manage stress, and develop effective study
+          strategies with educational counseling.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon gradient-6">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3 class="feature-title">Mental Health</h3>
+        <p class="feature-description">Comprehensive support for anxiety, depression, trauma, and other mental health
+          concerns with evidence-based therapies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number" data-target="5000">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="50">0</div>
+          <div class="stat-label">Expert Counselors</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="15000">0</div>
+          <div class="stat-label">Sessions Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="98">0</div>
+          <div class="stat-label">Success Rate %</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="contact">
+    <div class="cta-container">
+      <h2 class="cta-title">Ready to Transform Your Life?</h2>
+      <p class="cta-description">Take the first step towards a happier, healthier you. Our expert counselors are here to
+        support your journey every step of the way.</p>
+      <a href="contact.html" class="cta-button">
+        <i class="fas fa-rocket mr-2"></i>Get Started Today
+      </a>
+    </div>
+  </section>
+
+  <footer class="ftco-footer">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-sm-12 col-md">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2 logo"><a href="#">Counselor</a></h2>
+            <p>Far far away, behind the word mountains, far from the countries.</p>
+            <ul class="ftco-footer-social list-unstyled mt-2">
+              <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md">
+          <div class="ftco-footer-widget mb-4 ml-md-4">
+            <h2 class="ftco-heading-2">Explore</h2>
+            <ul class="list-unstyled">
+              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
+              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>What We Do</a></li>
+              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Plans &amp; Pricing</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md">
+          <div class="ftco-footer-widget mb-4 ml-md-4">
+            <h2 class="ftco-heading-2">Legal</h2>
+            <ul class="list-unstyled">
+              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Join us</a></li>
+              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
+              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Privacy &amp; Policy</a></li>
+              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Company</h2>
+            <ul class="list-unstyled">
+              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
+              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
+              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
+              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Have a Questions?</h2>
+            <div class="block-23 mb-3">
+              <ul>
+                <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain View, San
+                    Francisco, California, USA</span></li>
+                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
+                      class="text">info@yourdomain.com</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid px-0 py-5 bg-black">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="mb-0 text-center" style="color: rgba(255,255,255,.5);">Copyright &copy;2026 All rights reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    // Animated Counter for Stats
+    function animateCounter() {
+      const counters = document.querySelectorAll('.stat-number');
+      const speed = 200;
+
+      counters.forEach(counter => {
+        const animate = () => {
+          const value = +counter.getAttribute('data-target');
+          const data = +counter.innerText;
+          const time = value / speed;
+
+          if (data < value) {
+            counter.innerText = Math.ceil(data + time);
+            setTimeout(animate, 1);
+          } else {
+            counter.innerText = value.toLocaleString();
+          }
+        }
+        animate();
+      });
+    }
+
+    // Trigger animation when stats section is in view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add hover effect to feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+      card.addEventListener('mouseenter', function () {
+        this.style.transform = 'translateY(-15px) scale(1.02)';
+      });
+
+      card.addEventListener('mouseleave', function () {
+        this.style.transform = 'translateY(-10px) scale(1)';
+      });
+    });
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const body = document.body;
+    const html = document.documentElement;
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    const savedRtl = localStorage.getItem('rtl');
+
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      themeIcon.textContent = '☀️';
+    }
+
+    if (savedRtl === 'true') {
+      body.classList.add('rtl-mode');
+      html.setAttribute('dir', 'rtl');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      themeIcon.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    rtlToggle.addEventListener('click', () => {
+      body.classList.toggle('rtl-mode');
+      const isRtl = body.classList.contains('rtl-mode');
+      html.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+      localStorage.setItem('rtl', isRtl ? 'true' : 'false');
+    });
+  </script>
+</body>
+
+</html>
