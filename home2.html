@@ -708,11 +708,16 @@
           <li class="nav-item active"><a href="home2.html" class="nav-link">Home 2</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
           <li class="nav-item"><a href="counselor.html" class="nav-link">Counselor</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
           <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
           <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item"><a href="login.html" class="btn btn-primary nav-link-btn">Login</a></li>
-          <li class="nav-item"><a href="register.html" class="btn btn-outline-primary nav-link-btn">Register</a></li>
+          <li class="nav-item" id="nav-login"><a href="login.html" class="btn btn-primary nav-link-btn">Login</a></li>
+          <li class="nav-item" id="nav-register"><a href="register.html"
+              class="btn btn-outline-primary nav-link-btn">Register</a></li>
+          <li class="nav-item" id="nav-logout" style="display:none;"><a href="#" class="btn btn-danger nav-link-btn"
+              onclick="logout()">Logout</a></li>
           <li class="nav-item theme-toggle">
             <button id="rtl-toggle" title="Toggle RTL">RTL</button>
             <button id="theme-toggle" title="Toggle Dark/Light Mode">
@@ -1059,6 +1064,22 @@
       html.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
       localStorage.setItem('rtl', isRtl ? 'true' : 'false');
     });
+
+    // Logout and Login visibility logic
+    const currentUser = localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser');
+    if (currentUser) {
+      if (document.getElementById('nav-login')) document.getElementById('nav-login').style.display = 'none';
+      if (document.getElementById('nav-register')) document.getElementById('nav-register').style.display = 'none';
+      if (document.getElementById('nav-logout')) document.getElementById('nav-logout').style.display = 'block';
+    }
+
+    function logout() {
+      localStorage.removeItem('currentUser');
+      localStorage.removeItem('userSession');
+      localStorage.removeItem('userToken');
+      sessionStorage.removeItem('currentUser');
+      window.location.href = 'index.html';
+    }
   </script>
 </body>
 
