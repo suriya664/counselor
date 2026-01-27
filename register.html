@@ -22,7 +22,7 @@
       align-items: center;
       justify-content: center;
       font-family: 'Roboto', sans-serif;
-      padding: 100px 0 20px 0;
+      padding: 20px 0;
     }
 
     /* Blog date styling - make black color */
@@ -44,13 +44,13 @@
 
     .logo-container {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      padding: 30px;
+      padding: 20px;
       text-align: center;
     }
 
     .logo-container .logo {
       color: white;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       text-decoration: none;
       display: inline-block;
@@ -64,19 +64,19 @@
     }
 
     .register-form {
-      padding: 40px 30px;
+      padding: 30px 25px;
       max-height: 70vh;
       overflow-y: auto;
     }
 
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .form-control {
       border: 2px solid #e9ecef;
       border-radius: 10px;
-      padding: 15px;
+      padding: 12px;
       font-size: 16px;
       transition: all 0.3s ease;
       background: #f8f9fa;
@@ -92,9 +92,9 @@
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       border: none;
-      padding: 15px;
+      padding: 12px;
       border-radius: 10px;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 500;
       width: 100%;
       transition: all 0.3s ease;
@@ -108,7 +108,7 @@
     }
 
     .form-check {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .form-check-label {
@@ -118,8 +118,8 @@
 
     .login-link {
       text-align: center;
-      margin-top: 30px;
-      padding-top: 20px;
+      margin-top: 20px;
+      padding-top: 15px;
       border-top: 1px solid #e9ecef;
     }
 
@@ -218,8 +218,8 @@
     }
 
     .social-login {
-      margin-top: 30px;
-      padding-top: 20px;
+      margin-top: 20px;
+      padding-top: 15px;
       border-top: 1px solid #e9ecef;
     }
 
@@ -227,7 +227,7 @@
       text-align: center;
       color: #6c757d;
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-weight: normal;
     }
 
@@ -238,7 +238,7 @@
 
     .btn-social {
       flex: 1;
-      padding: 12px;
+      padding: 10px;
       border: 2px solid #e9ecef;
       background: white;
       border-radius: 10px;
@@ -417,178 +417,183 @@
       background-color: #667eea !important;
       color: white !important;
     }
+
+    .theme-toggle-login {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .theme-toggle-login button {
+      background: transparent;
+      border: 1px solid #667eea;
+      color: #667eea;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 12px;
+    }
+
+    .theme-toggle-login button:hover {
+      background: #667eea;
+      color: white;
+    }
+
+    .rtl-mode {
+      direction: rtl;
+    }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Counselor</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-      </button>
-
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="counselor.html" class="nav-link">Counselor</a></li>
-          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item" id="nav-login"><a href="login.html" class="btn btn-primary nav-link-btn">Login</a></li>
-          <li class="nav-item active" id="nav-register"><a href="register.html"
-              class="btn btn-outline-primary nav-link-btn">Register</a></li>
-          <li class="nav-item" id="nav-logout" style="display:none;"><a href="#" class="btn btn-danger nav-link-btn"
-              onclick="logout()">Logout</a></li>
-          <li class="nav-item theme-toggle">
-            <button id="rtl-toggle" title="Toggle RTL">RTL</button>
-            <button id="theme-toggle" title="Toggle Dark/Light Mode">
-              <span id="theme-icon">🌙</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
   <div class="register-container">
     <div class="logo-container">
       <a href="index.html" class="logo">Counselor</a>
-      <span id="theme-icon">🌙</span>
-      </button>
     </div>
-  </div>
 
-  <div class="register-form">
-    <h3 class="text-center mb-4">Create Account</h3>
-    <p class="text-center text-muted mb-4">Join our community today</p>
+    <div class="register-form">
+      <h3 class="text-center mb-4">Create Account</h3>
+      <p class="text-center text-muted mb-4">Join our community today</p>
 
-    <div id="alertContainer"></div>
+      <div id="alertContainer"></div>
 
-    <form id="registerForm">
-      <div class="form-row">
+      <form id="registerForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName" class="sr-only">First Name</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa fa-user"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName" class="sr-only">Last Name</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa fa-user"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+            </div>
+          </div>
+        </div>
+
         <div class="form-group">
-          <label for="firstName" class="sr-only">First Name</label>
+          <label for="email" class="sr-only">Email Address</label>
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">
-                <i class="fa fa-user"></i>
+                <i class="fa fa-envelope"></i>
               </span>
             </div>
-            <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+            <input type="email" class="form-control" id="email" placeholder="Email Address" required>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="lastName" class="sr-only">Last Name</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="email" class="sr-only">Email Address</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-envelope"></i>
-            </span>
+          <label for="phone" class="sr-only">Phone Number</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-phone"></i>
+              </span>
+            </div>
+            <input type="tel" class="form-control" id="phone" placeholder="Phone Number (optional)">
           </div>
-          <input type="email" class="form-control" id="email" placeholder="Email Address" required>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="phone" class="sr-only">Phone Number</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-phone"></i>
-            </span>
+        <div class="form-group">
+          <label for="password" class="sr-only">Password</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-lock"></i>
+              </span>
+            </div>
+            <input type="password" class="form-control" id="password" placeholder="Password" required>
           </div>
-          <input type="tel" class="form-control" id="phone" placeholder="Phone Number (optional)">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="password" class="sr-only">Password</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-lock"></i>
-            </span>
+          <div class="password-strength">
+            <div class="password-strength-bar" id="passwordStrengthBar"></div>
           </div>
-          <input type="password" class="form-control" id="password" placeholder="Password" required>
-        </div>
-        <div class="password-strength">
-          <div class="password-strength-bar" id="passwordStrengthBar"></div>
-        </div>
-        <div class="password-requirements">
-          <ul>
-            <li id="req-length">At least 8 characters</li>
-            <li id="req-uppercase">One uppercase letter</li>
-            <li id="req-lowercase">One lowercase letter</li>
-            <li id="req-number">One number</li>
-            <li id="req-special">One special character</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="confirmPassword" class="sr-only">Confirm Password</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa fa-lock"></i>
-            </span>
+          <div class="password-requirements">
+            <ul>
+              <li id="req-length">At least 8 characters</li>
+              <li id="req-uppercase">One uppercase letter</li>
+              <li id="req-lowercase">One lowercase letter</li>
+              <li id="req-number">One number</li>
+              <li id="req-special">One special character</li>
+            </ul>
           </div>
-          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
         </div>
-      </div>
 
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="agreeTerms" required>
-        <label class="form-check-label" for="agreeTerms">
-          I agree to the <a href="#" onclick="showTerms()">Terms of Service</a> and <a href="#"
-            onclick="showPrivacy()">Privacy Policy</a>
-        </label>
-      </div>
+        <div class="form-group">
+          <label for="confirmPassword" class="sr-only">Confirm Password</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-lock"></i>
+              </span>
+            </div>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+          </div>
+        </div>
 
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="newsletter">
-        <label class="form-check-label" for="newsletter">
-          Subscribe to our newsletter for job search tips and updates
-        </label>
-      </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+          <label class="form-check-label" for="agreeTerms">
+            I agree to the <a href="#" onclick="showTerms()">Terms of Service</a> and <a href="#"
+              onclick="showPrivacy()">Privacy Policy</a>
+          </label>
+        </div>
 
-      <button type="submit" class="btn-register">
-        Create Account
-      </button>
-    </form>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="newsletter">
+          <label class="form-check-label" for="newsletter">
+            Subscribe to our newsletter for job search tips and updates
+          </label>
+        </div>
 
-    <div class="social-login">
-      <h5>Or sign up with</h5>
-      <div class="social-buttons">
-        <button class="btn-social facebook" onclick="handleSocialRegister('facebook')">
-          <i class="fa fa-facebook-f"></i>
+        <button type="submit" class="btn-register">
+          Create Account
         </button>
-        <button class="btn-social google" onclick="handleSocialRegister('google')">
-          <i class="fa fa-google"></i>
-        </button>
-        <button class="btn-social linkedin" onclick="handleSocialRegister('linkedin')">
-          <i class="fa fa-linkedin-in"></i>
+      </form>
+
+      <div class="social-login">
+        <h5>Or sign up with</h5>
+        <div class="social-buttons">
+          <button class="btn-social facebook" onclick="handleSocialRegister('facebook')">
+            <i class="fa fa-facebook-f"></i>
+          </button>
+          <button class="btn-social google" onclick="handleSocialRegister('google')">
+            <i class="fa fa-google"></i>
+          </button>
+          <button class="btn-social linkedin" onclick="handleSocialRegister('linkedin')">
+            <i class="fa fa-linkedin-in"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="login-link">
+        <p>Already have an account? <a href="login.html">Sign in</a></p>
+      </div>
+
+      <div class="theme-toggle-login">
+        <button id="rtl-toggle" title="Toggle RTL">RTL</button>
+        <button id="theme-toggle" title="Toggle Dark/Light Mode">
+          <span id="theme-icon">🌙</span>
         </button>
       </div>
     </div>
-
-    <div class="login-link">
-      <p>Already have an account? <a href="login.html">Sign in</a></p>
-    </div>
-  </div>
   </div>
 
   <script src="js/jquery.min.js"></script>
