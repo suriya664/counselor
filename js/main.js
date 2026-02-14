@@ -222,5 +222,19 @@
   $('[data-toggle="popover"]').popover()
 	$('[data-toggle="tooltip"]').tooltip()
 
+	// Scroll to Top Button
+	var scrollToTopBtn = $('#scrollToTop');
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 300) {
+			scrollToTopBtn.addClass('show');
+		} else {
+			scrollToTopBtn.removeClass('show');
+		}
+	});
+	scrollToTopBtn.on('click', function(e) {
+		e.preventDefault();
+		$('html, body').animate({ scrollTop: 0 }, 600);
+	});
+
 })(jQuery);
 

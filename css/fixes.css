@@ -1,0 +1,319 @@
+/* ==========================================================================
+   Counselor – Bug Fix & Responsive Overrides
+   ========================================================================== */
+
+/* ---------- 1. Footer Social Icon Hover ---------- */
+.ftco-footer-social li a {
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.ftco-footer-social li a:hover {
+  background: #bf8079 !important;
+  color: #fff !important;
+  transform: scale(1.15);
+}
+
+/* ---------- 2. Header / Footer Logo Consistency ---------- */
+.ftco-footer .ftco-heading-2.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.ftco-footer .ftco-heading-2.logo a .flaticon-employee {
+  margin-right: 6px;
+}
+
+.navbar-brand {
+  display: flex !important;
+  align-items: center;
+}
+
+.navbar-brand .flaticon-employee {
+  margin-right: 6px;
+}
+
+/* ---------- 3. Nav Button Spacing (Mobile / Tablet) ---------- */
+@media (max-width: 991px) {
+  .navbar-nav .nav-item.ml-lg-2 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .navbar-nav .nav-item .nav-link.btn {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+  }
+
+  #dark-mode-toggle {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+/* ---------- 4. Scroll-to-Top Button ---------- */
+#scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #bf8079;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+
+#scrollToTop:hover {
+  background: #a0635d;
+  transform: translateY(-3px);
+}
+
+#scrollToTop.show {
+  display: flex;
+}
+
+.dark-mode #scrollToTop {
+  background: #bf8079;
+  box-shadow: 0 2px 10px rgba(191, 128, 121, 0.3);
+}
+
+/* ---------- 5. Hero Section Full Height ---------- */
+.hero-wrap {
+  min-height: 100vh;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.hero-wrap-2 {
+  min-height: 50vh;
+}
+
+/* ---------- 6. Footer block-23 Text Spacing ---------- */
+.block-23 ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.block-23 ul li .icon {
+  min-width: 30px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.block-23 ul li .text {
+  word-break: break-word;
+}
+
+/* ---------- 7. Pricing Card Alignment ---------- */
+.block-7 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.block-7 .text-center {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.block-7 .btn {
+  margin-top: auto;
+}
+
+/* ---------- 8. Services Section Image Fix ---------- */
+.services-wrap .img {
+  min-height: 250px;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+@media (max-width: 767px) {
+  .services-wrap {
+    flex-direction: column !important;
+  }
+  
+  .services-wrap .img {
+    min-height: 200px;
+    width: 100%;
+  }
+  
+  .services-wrap .text {
+    padding: 20px;
+  }
+}
+
+/* ---------- 9. About Page Image on Mobile ---------- */
+@media (max-width: 767px) {
+  .img.img-3 {
+    min-height: 300px;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+}
+
+/* ---------- 10. Send Message Button Normalization ---------- */
+.ftco-appointment .btn-primary,
+.appointment .btn-primary {
+  padding: 10px 24px !important;
+  font-size: 1rem !important;
+}
+
+/* ---------- 11. Tab View Service Cards Alignment ---------- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .services-2 {
+    margin-bottom: 30px;
+  }
+  
+  .tabulation .nav-pills {
+    margin-bottom: 20px;
+  }
+  
+  .tabulation .tab-content .img {
+    min-height: 250px;
+    background-size: cover !important;
+  }
+}
+
+/* ---------- 12. Blog Entry Equal Heights ---------- */
+.blog-entry {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-entry .text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-entry .text p:last-child {
+  margin-top: auto;
+}
+
+/* ---------- 13. Contact Page Card Alignment (Tablet) ---------- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .dbox {
+    margin-bottom: 20px;
+  }
+}
+
+/* ---------- 14. Home 2 Hero Buttons Center ---------- */
+@media (max-width: 767px) {
+  .hero-wrap .text {
+    text-align: center;
+  }
+  
+  .hero-wrap .text p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+/* ---------- 15. Dashboard Sidebar Mobile Fix ---------- */
+@media (max-width: 767px) {
+  #sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    height: 100vh;
+    margin-left: -250px;
+    transition: margin-left 0.3s ease;
+  }
+
+  #sidebar-wrapper.active {
+    margin-left: 0;
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+}
+
+/* ---------- 16. Login/Register Viewport Fit ---------- */
+.login-container {
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+/* ---------- 17. Staff/Counselor Card Equal Height ---------- */
+.staff {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.staff .text {
+  flex: 1;
+}
+
+/* ---------- 18. Contact Page col-md-3 to responsive ---------- */
+@media (min-width: 576px) and (max-width: 991px) {
+  .wrapper .row.mb-5 > [class*="col-md-3"] {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 15px;
+  }
+}
+
+/* ---------- 19. Home 2 Start Your Journey Cards ---------- */
+.journey-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+}
+
+.journey-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.journey-card .icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  background: rgba(191, 128, 121, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #bf8079;
+}
+
+.dark-mode .journey-card {
+  background: #252525;
+}
