@@ -6,9 +6,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
-
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,588 +18,16 @@
 
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/style.css">
-
-  <style>
-    .nav-link-btn {
-      margin: 0 2px;
-      padding: 8px 14px !important;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .navbar-nav .nav-item {
-      margin: 0 2px;
-    }
-
-    .navbar-nav .nav-link {
-      padding: 8px 10px !important;
-    }
-
-    .nav-link-btn:hover {
-      transform: translateY(-1px);
-      text-decoration: none;
-    }
-
-    .btn-primary.nav-link-btn {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-      border-color: #667eea !important;
-      color: white !important;
-    }
-
-    .btn-outline-primary.nav-link-btn {
-      border-color: #667eea !important;
-      color: #667eea !important;
-    }
-
-    .btn-outline-primary.nav-link-btn:hover {
-      background: #667eea !important;
-      color: white !important;
-    }
-
-    .theme-toggle {
-      margin-left: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-
-    .theme-toggle button {
-      background: transparent;
-      border: 1px solid #667eea;
-      color: #667eea;
-      padding: 6px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 12px;
-      white-space: nowrap;
-    }
-
-    .theme-toggle button:hover {
-      background: #667eea;
-      color: white;
-    }
-
-    .rtl-mode {
-      direction: rtl;
-    }
-
-    .rtl-mode .navbar-nav.ml-auto {
-      margin-left: 0 !important;
-      margin-right: auto;
-    }
-
-    .rtl-mode .theme-toggle {
-      margin-left: 0;
-      margin-right: 10px;
-    }
-
-    .dark-mode {
-      background-color: #1a1a1a;
-      color: #ffffff;
-    }
-
-    .dark-mode .navbar {
-      background-color: #2d2d2d !important;
-    }
-
-    .dark-mode .navbar-brand {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .navbar-nav .nav-link {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .navbar-nav .nav-link:hover {
-      color: #667eea !important;
-    }
-
-    .dark-mode .navbar-nav .nav-item.active .nav-link {
-      color: #667eea !important;
-    }
-
-    .dark-mode .bg-light {
-      background-color: #2d2d2d !important;
-      color: #ffffff !important;
-    }
-
-    .dark-mode .text {
-      color: #ffffff !important;
-    }
-
-    .dark-mode h1,
-    .dark-mode h2,
-    .dark-mode h3,
-    .dark-mode h4,
-    .dark-mode h5,
-    .dark-mode h6 {
-      color: #ffffff !important;
-    }
-
-    .dark-mode p {
-      color: #cccccc !important;
-    }
-
-    .dark-mode .nav-link {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .btn-primary {
-      background-color: #667eea !important;
-      border-color: #667eea !important;
-      color: white !important;
-    }
-
-    .dark-mode .btn-outline-primary {
-      border-color: #667eea !important;
-      color: #667eea !important;
-    }
-
-    /* Blog date styling - make black color */
-    .blog-entry .meta .day,
-    .blog-entry .meta .mos,
-    .blog-entry .meta .yr {
-      color: #000000 !important;
-    }
-
-    /* How It Works section icons - fully white circles */
-    .services-2 .icon {
-      background: #ffffff !important;
-      color: #667eea !important;
-    }
-
-    .dark-mode .theme-toggle button {
-      border-color: #667eea !important;
-      color: #667eea !important;
-    }
-
-    .dark-mode .theme-toggle button:hover {
-      background-color: #667eea !important;
-      color: white !important;
-    }
-
-    .dark-mode .btn-outline-primary:hover {
-      background-color: #667eea !important;
-      color: white !important;
-    }
-
-    /* Blog date styling - make black color */
-    .blog-entry .meta .day,
-    .blog-entry .meta .mos,
-    .blog-entry .meta .yr {
-      color: #000000 !important;
-    }
-
-    .dark-mode .section-title,
-    .dark-mode .heading-section,
-    .dark-mode .subheading {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .ftco-animate {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .overlay {
-      background-color: rgba(0, 0, 0, 0.7) !important;
-    }
-
-    .dark-mode .hero-wrap h1,
-    .dark-mode .hero-wrap p,
-    .dark-mode .hero-wrap .btn {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .services-2 h2,
-    .dark-mode .services-2 p {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .testimony-wrap p,
-    .dark-mode .testimony-wrap .name,
-    .dark-mode .testimony-wrap .position {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .block-7 .price,
-    .dark-mode .block-7 .excerpt,
-    .dark-mode .block-7 li {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .appointment label,
-    .dark-mode .appointment .form-control,
-    .dark-mode .appointment textarea {
-      color: #ffffff !important;
-      background-color: #404040 !important;
-      border-color: #667eea !important;
-    }
-
-    .dark-mode .blog-entry h3,
-    .dark-mode .blog-entry p {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .ftco-footer-widget h2,
-    .dark-mode .ftco-footer-widget p,
-    .dark-mode .ftco-footer-widget li a {
-      color: #ffffff !important;
-    }
-
-    /* Comprehensive dark mode text fixes */
-    .dark-mode * {
-      color: inherit !important;
-    }
-
-    .dark-mode body,
-    .dark-mode .container,
-    .dark-mode .row,
-    .dark-mode .col-md-*,
-    .dark-mode .col-lg-*,
-    .dark-mode .col-sm-*,
-    .dark-mode .col-xs-* {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .text,
-    .dark-mode .heading-section,
-    .dark-mode .section-title,
-    .dark-mode .subheading,
-    .dark-mode .breadcrumbs,
-    .dark-mode .bread,
-    .dark-mode .mb-4,
-    .dark-mode .mb-0,
-    .dark-mode .mt-2,
-    .dark-mode .mt-4,
-    .dark-mode .py-3,
-    .dark-mode .py-4,
-    .dark-mode .py-5,
-    .dark-mode .px-2,
-    .dark-mode .px-3,
-    .dark-mode .px-4,
-    .dark-mode .px-5,
-    .dark-mode .d-flex,
-    .dark-mode .align-items-center,
-    .dark-mode .justify-content-center,
-    .dark-mode .text-center,
-    .dark-mode .no-gutters,
-    .dark-mode .slider-text,
-    .dark-mode .w-100 {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .intro,
-    .dark-mode .services-2,
-    .dark-mode .wrap-about,
-    .dark-mode .testimony-section,
-    .dark-mode .ftco-appointment,
-    .dark-mode .ftco-footer,
-    .dark-mode .ftco-intro,
-    .dark-mode .ftco-counter,
-    .dark-mode .ftco-section {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .icon,
-    .dark-mode .flaticon-*,
-    .dark-mode .fa,
-    .dark-mode .fa-* {
-      color: #667eea !important;
-    }
-
-    .dark-mode .number,
-    .dark-mode .strong,
-    .dark-mode .block-18,
-    .dark-mode .block-23,
-    .dark-mode .icon-wrap,
-    .dark-mode .img-wrap,
-    .dark-mode .staff,
-    .dark-mode .person_1,
-    .dark-mode .person_2,
-    .dark-mode .person_3 {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .overlay *,
-    .dark-mode .hero-wrap *,
-    .dark-mode .testimony-wrap *,
-    .dark-mode .blog-entry *,
-    .dark-mode .services-2 *,
-    .dark-mode .block-7 *,
-    .dark-mode .appointment *,
-    .dark-mode .ftco-footer-widget * {
-      color: #ffffff !important;
-    }
-
-    .dark-mode input,
-    .dark-mode select,
-    .dark-mode textarea,
-    .dark-mode .form-control,
-    .dark-mode .form-group,
-    .dark-mode .select-wrap,
-    .dark-mode .form-field {
-      color: #ffffff !important;
-      background-color: #404040 !important;
-      border-color: #667eea !important;
-    }
-
-    .dark-mode .btn,
-    .dark-mode button,
-    .dark-mode .btn-primary,
-    .dark-mode .btn-outline-primary,
-    .dark-mode .btn-secondary,
-    .dark-mode .btn-success,
-    .dark-mode .btn-info,
-    .dark-mode .btn-warning,
-    .dark-mode .btn-danger,
-    .dark-mode .btn-light,
-    .dark-mode .btn-dark {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .card,
-    .dark-mode .card-body,
-    .dark-mode .card-header,
-    .dark-mode .card-footer,
-    .dark-mode .modal,
-    .dark-mode .modal-header,
-    .dark-mode .modal-body,
-    .dark-mode .modal-footer {
-      color: #ffffff !important;
-      background-color: #2d2d2d !important;
-    }
-
-    .dark-mode .dropdown-menu,
-    .dark-mode .dropdown-item,
-    .dark-mode .nav-link,
-    .dark-mode .navbar-nav *,
-    .dark-mode .navbar-brand {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .list-unstyled,
-    .dark-mode .list-unstyled li,
-    .dark-mode .list-unstyled a {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .copyright,
-    .dark-mode .mb-0,
-    .dark-mode .text-muted {
-      color: #cccccc !important;
-    }
-
-    .dark-mode .alert,
-    .dark-mode .alert-success,
-    .dark-mode .alert-danger,
-    .dark-mode .alert-warning,
-    .dark-mode .alert-info {
-      color: #ffffff !important;
-      background-color: #404040 !important;
-      border-color: #667eea !important;
-    }
-
-    /* Specific fixes for testimonial and pricing sections */
-    .dark-mode .testimony-section .heading-section h2,
-    .dark-mode .testimony-section .heading-section span,
-    .dark-mode .testimony-section .testimony-wrap .name,
-    .dark-mode .testimony-section .testimony-wrap .position,
-    .dark-mode .testimony-section .testimony-wrap p {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .ftco-section .heading-section h2,
-    .dark-mode .ftco-section .heading-section span,
-    .dark-mode .ftco-section .heading-section .subheading {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .block-7 .text-center h2,
-    .dark-mode .block-7 .text-center span,
-    .dark-mode .block-7 .text-center .price,
-    .dark-mode .block-7 .text-center .excerpt,
-    .dark-mode .block-7 .pricing-text li,
-    .dark-mode .block-7 .btn {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .services-2 .text-center h2,
-    .dark-mode .services-2 .text-center p {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .nav-pills .nav-link {
-      color: #ffffff !important;
-      background-color: #404040 !important;
-      border-color: #667eea !important;
-    }
-
-    .dark-mode .nav-pills .nav-link.active {
-      color: #ffffff !important;
-      background-color: #667eea !important;
-    }
-
-    .dark-mode .nav-pills .nav-link:hover {
-      color: #ffffff !important;
-      background-color: #475569 !important;
-    }
-
-    .dark-mode .tab-content h3,
-    .dark-mode .tab-content h3 a,
-    .dark-mode .tab-content p {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .tab-content .img {
-      border-color: #667eea !important;
-    }
-
-    .dark-mode .appointment .form-group label,
-    .dark-mode .appointment .form-group .form-control,
-    .dark-mode .appointment .form-group textarea,
-    .dark-mode .appointment .form-group select {
-      color: #ffffff !important;
-      background-color: #404040 !important;
-      border-color: #667eea !important;
-    }
-
-    .dark-mode .appointment .form-group .select-wrap {
-      background-color: #404040 !important;
-      border-color: #667eea !important;
-    }
-
-    .dark-mode .appointment .form-group .select-wrap .icon {
-      color: #667eea !important;
-    }
-
-    .dark-mode .appointment .btn-primary {
-      color: #ffffff !important;
-      background-color: #667eea !important;
-      border-color: #667eea !important;
-    }
-
-    /* Force all text to be white in dark mode */
-    .dark-mode *:not(i):not(.fa):not(.flaticon-*) {
-      color: #ffffff !important;
-    }
-
-    .dark-mode i,
-    .dark-mode .fa,
-    .dark-mode .flaticon-* {
-      color: #667eea !important;
-    }
-
-    /* Specific text content fixes */
-    .dark-mode [class*="text"],
-    .dark-mode [class*="heading"],
-    .dark-mode [class*="title"],
-    .dark-mode [class*="subheading"],
-    .dark-mode [class*="price"],
-    .dark-mode [class*="excerpt"],
-    .dark-mode [class*="name"],
-    .dark-mode [class*="position"] {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .carousel-testimony *,
-    .dark-mode .owl-carousel *,
-    .dark-mode .ftco-owl * {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .carousel-testimony .testimony-wrap .icon,
-    .dark-mode .carousel-testimony .testimony-wrap .icon .fa {
-      color: #667eea !important;
-    }
-
-    /* Keep testimonial cards with black background in dark mode */
-    .dark-mode .testimony-wrap {
-      background-color: #000000 !important;
-      border: 1px solid #333333 !important;
-    }
-
-    .dark-mode .testimony-section .img-bg {
-      background-color: #000000 !important;
-    }
-
-    .dark-mode .carousel-testimony .testimony-wrap {
-      background-color: #000000 !important;
-      border: 1px solid #333333 !important;
-    }
-
-    .dark-mode .testimony-wrap .text {
-      background-color: #000000 !important;
-    }
-
-    /* Ensure testimonial text remains white on black background */
-    .dark-mode .testimony-wrap .text p,
-    .dark-mode .testimony-wrap .text .name,
-    .dark-mode .testimony-wrap .text .position {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .testimony-wrap .text .icon {
-      color: #667eea !important;
-      background-color: #1a1a1a !important;
-      border: 2px solid #667eea !important;
-    }
-
-    /* Keep pricing cards with black background in dark mode */
-    .dark-mode .block-7 {
-      background-color: #000000 !important;
-      border: 1px solid #333333 !important;
-    }
-
-    .dark-mode .block-7 .text-center {
-      background-color: #000000 !important;
-    }
-
-    .dark-mode .ftco-section.bg-light {
-      background-color: #000000 !important;
-    }
-
-    /* Ensure pricing text remains white on black background */
-    .dark-mode .block-7 .text-center h2,
-    .dark-mode .block-7 .text-center .price,
-    .dark-mode .block-7 .text-center .excerpt,
-    .dark-mode .block-7 .pricing-text li,
-    .dark-mode .block-7 .btn {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .block-7 .text-center .price sup,
-    .dark-mode .block-7 .text-center .price sub,
-    .dark-mode .block-7 .text-center .price .number {
-      color: #ffffff !important;
-    }
-
-    .dark-mode .block-7 .pricing-text .fa {
-      color: #667eea !important;
-    }
-
-    .dark-mode .block-7 .btn-primary {
-      background-color: #667eea !important;
-      border-color: #667eea !important;
-      color: #ffffff !important;
-    }
-
-    .dark-mode .block-7 .btn-primary:hover {
-      background-color: #764ba2 !important;
-      border-color: #764ba2 !important;
-      color: #ffffff !important;
-    }
-  </style>
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="icon" href="images/loc.png">
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Counselor</a>
+      <a class="navbar-brand" href="index.html"><span class="flaticon-employee mr-1"
+          style="color: #bf8079;"></span>Counselor</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
@@ -616,21 +41,20 @@
           <li class="nav-item"><a href="counselor.html" class="nav-link">Counselor</a></li>
           <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
           <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item" id="nav-login"><a href="login.html" class="btn btn-primary nav-link-btn">Login</a></li>
-          <li class="nav-item" id="nav-register"><a href="register.html"
-              class="btn btn-outline-primary nav-link-btn">Register</a></li>
-          <li class="nav-item" id="nav-logout" style="display:none;"><a href="#" class="btn btn-danger nav-link-btn"
-              onclick="logout()">Logout</a></li>
-          <li class="nav-item theme-toggle">
-            <button id="rtl-toggle" title="Toggle RTL">RTL</button>
-            <button id="theme-toggle" title="Toggle Dark/Light Mode">
-              <span id="theme-icon">🌙</span>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a>
+          </li>
+          <li class="nav-item ml-lg-2"><a href="login.html"
+              class="nav-link btn btn-outline-light py-2 px-3 mt-2 mt-lg-0 row d-flex align-items-center justify-content-center">Login</a>
+          </li>
+          <li class="nav-item ml-lg-2 d-flex align-items-center">
+            <button id="dark-mode-toggle" class="btn btn-outline-light py-2 px-3 mt-2 mt-lg-0"
+              style="border-radius: 50%; width: 45px; height: 45px; padding: 0; display: flex; align-items: center; justify-content: center;">
+              <span class="fa fa-moon-o"></span>
             </button>
           </li>
         </ul>
+
       </div>
     </div>
   </nav>
@@ -876,7 +300,8 @@
       <div class="row mb-5">
         <div class="col-sm-12 col-md">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2 logo"><a href="#">Counselor</a></h2>
+            <h2 class="ftco-heading-2 logo"><a href="#"><span class="flaticon-employee mr-1"
+                  style="color: #bf8079;"></span>Counselor</a></h2>
             <p>Far far away, behind the word mountains, far from the countries.</p>
             <ul class="ftco-footer-social list-unstyled mt-2">
               <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
@@ -938,8 +363,9 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-
-            <p class="mb-0 text-center" style="color: rgba(255,255,255,.5);">Copyright &copy;2026 All rights reserved
+            <p class="mb-0" style="color: rgba(255,255,255,.5);">
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved
             </p>
           </div>
         </div>
@@ -968,60 +394,11 @@
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
+  <script src="js/dark-mode.js"></script>
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const rtlToggle = document.getElementById('rtl-toggle');
-    const body = document.body;
-    const html = document.documentElement;
-
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    const savedRtl = localStorage.getItem('rtl');
-
-    if (savedTheme === 'dark') {
-      body.classList.add('dark-mode');
-      themeIcon.textContent = '☀️';
-    }
-
-    if (savedRtl === 'true') {
-      body.classList.add('rtl-mode');
-      html.setAttribute('dir', 'rtl');
-    }
-
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      const isDark = body.classList.contains('dark-mode');
-      themeIcon.textContent = isDark ? '☀️' : '🌙';
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-
-    rtlToggle.addEventListener('click', () => {
-      body.classList.toggle('rtl-mode');
-      const isRtl = body.classList.contains('rtl-mode');
-      html.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
-      localStorage.setItem('rtl', isRtl ? 'true' : 'false');
-    });
-
-    // Logout and Login visibility logic
-    const currentUser = localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser');
-    if (currentUser) {
-      if (document.getElementById('nav-login')) document.getElementById('nav-login').style.display = 'none';
-      if (document.getElementById('nav-register')) document.getElementById('nav-register').style.display = 'none';
-      if (document.getElementById('nav-logout')) document.getElementById('nav-logout').style.display = 'block';
-    }
-
-    function logout() {
-      localStorage.removeItem('currentUser');
-      sessionStorage.removeItem('currentUser');
-      window.location.href = 'index.html';
-    }
-  </script>
 
 </body>
 
