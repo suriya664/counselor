@@ -21,6 +21,8 @@
 
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/fixes.css">
     <link rel="icon" href="images/loc.png">
     <style>
         body {
@@ -111,6 +113,7 @@
 
 <body>
 
+    <div class="sidebar-overlay"></div>
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -189,7 +192,7 @@
             <div class="container-fluid p-4">
                 <div class="row mb-4">
                     <div class="col-md-12">
-                        <h2 class="h3">Dashboard</h2>
+                        <h2 class="h3"><span style="color: #bf8079;">Counselor</span> Dashboard</h2>
                         <p class="text-muted">Welcome back, here's what's happening with your account today.</p>
                     </div>
                 </div>
@@ -226,7 +229,7 @@
                     <div class="col-md-3 ftco-animate">
                         <div class="card card-stats border-0 shadow-sm rounded p-4 text-center">
                             <div class="icon-wrap mb-3 text-info">
-                                <span class="fa fa-clock-o fa-2x"></span>
+                                <span class="flaticon-survey fa-2x"></span>
                             </div>
                             <h5 class="text-muted mb-0">Hours</h5>
                             <h3 class="font-weight-bold">24</h3>
@@ -238,8 +241,11 @@
                     <!-- Recent Activity -->
                     <div class="col-lg-8 ftco-animate">
                         <div class="card border-0 shadow-sm rounded">
-                            <div class="card-header bg-white border-0 py-3">
+                            <div
+                                class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0 font-weight-bold">Recent Activity</h5>
+                                <button class="btn btn-sm btn-primary" data-toggle="modal"
+                                    data-target="#addApplicationModal">Add Activity</button>
                             </div>
                             <div class="card-body p-0">
                                 <div class="table-responsive">
@@ -255,25 +261,29 @@
                                         <tbody>
                                             <tr>
                                                 <td>Oct 24, 2023</td>
-                                                <td>Session with Dr. Smith</td>
+                                                <td><span class="fa fa-user-md mr-2 text-primary"></span> Session with
+                                                    Dr. Smith</td>
                                                 <td><span class="badge badge-success px-3 py-2">Completed</span></td>
                                                 <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
                                             </tr>
                                             <tr>
                                                 <td>Oct 20, 2023</td>
-                                                <td>Relationship Counseling</td>
+                                                <td><span class="fa fa-users mr-2 text-success"></span> Relationship
+                                                    Counseling</td>
                                                 <td><span class="badge badge-warning px-3 py-2">Pending</span></td>
                                                 <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
                                             </tr>
                                             <tr>
                                                 <td>Oct 15, 2023</td>
-                                                <td>Family Therapy Session</td>
+                                                <td><span class="fa fa-heartbeat mr-2 text-danger"></span> Family
+                                                    Therapy Session</td>
                                                 <td><span class="badge badge-secondary px-3 py-2">Cancelled</span></td>
                                                 <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
                                             </tr>
                                             <tr>
                                                 <td>Oct 10, 2023</td>
-                                                <td>New Message Received</td>
+                                                <td><span class="fa fa-envelope mr-2 text-info"></span> New Message
+                                                    Received</td>
                                                 <td><span class="badge badge-info px-3 py-2">Read</span></td>
                                                 <td><a href="#" class="btn btn-sm btn-outline-primary">Reply</a></td>
                                             </tr>
@@ -424,6 +434,46 @@
     </div>
     <!-- /#wrapper -->
 
+    <!-- Job Application Modal -->
+    <div class="modal fade" id="addApplicationModal" tabindex="-1" role="dialog"
+        aria-labelledby="addApplicationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title font-weight-bold" id="addApplicationModalLabel">Add Job Application</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="jobApplicationForm">
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Enter full name">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">Position</label>
+                            <input type="text" class="form-control" placeholder="Counselor, HR, etc.">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">Resume Link</label>
+                            <input type="url" class="form-control" placeholder="https://link-to-resume.com">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="font-weight-bold">Cover Letter</label>
+                            <textarea class="form-control" rows="3" placeholder="Tell us about yourself"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-secondary mr-2 px-4"
+                                data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary px-4">Add Application</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -435,12 +485,19 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/scrollax.min.js"></script>
+    <script src="js/dark-mode.js"></script>
     <script src="js/main.js"></script>
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
             $("#sidebar-wrapper").toggleClass("active");
+            $(".sidebar-overlay").toggleClass("active");
+        });
+        $(".sidebar-overlay").click(function () {
+            $("#wrapper").removeClass("toggled");
+            $("#sidebar-wrapper").removeClass("active");
+            $(".sidebar-overlay").removeClass("active");
         });
     </script>
 
