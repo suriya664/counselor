@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <rect width="900" height="600" fill="#129a78"/>
+  <rect x="70" y="70" width="760" height="460" rx="22" fill="#ffffff" opacity="0.95"/>
+  <text x="450" y="250" text-anchor="middle" font-family="Segoe UI, Arial" font-size="46" fill="#153047">Testimonial</text>
+  <text x="450" y="310" text-anchor="middle" font-family="Segoe UI, Arial" font-size="30" fill="#1d6fd8">Daniel</text>
+</svg>

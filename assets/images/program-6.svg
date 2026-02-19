@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+  <rect width="1000" height="700" fill="#153047"/>
+  <rect x="80" y="80" width="840" height="540" rx="24" fill="#ffffff" opacity="0.95"/>
+  <text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial" font-size="52" fill="#153047">Program 6</text>
+  <text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial" font-size="34" fill="#129a78">Communication</text>
+</svg>
