@@ -419,6 +419,7 @@ h1 {
   width: 100%;
   border-radius: 14px;
   object-fit: cover;
+  object-position: top center;
   height: 190px;
   margin-bottom: 12px;
 }
@@ -787,6 +788,11 @@ textarea {
   border-radius: 14px;
 }
 
+.map-wrap.card {
+  padding: 0;
+  overflow: hidden;
+}
+
 .dashboard {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -971,6 +977,10 @@ footer {
   text-decoration: none;
 }
 
+.footer-grid .brand {
+  color: var(--primary);
+}
+
 @media (max-width: 1020px) {
   .nav {
     align-items: center;
@@ -1018,13 +1028,16 @@ footer {
 @media (max-width: 920px) {
 
   .hero-grid,
-  .grid.four,
-  .grid.three,
-  .grid.two,
   .dashboard,
   .form-row,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .grid.four,
+  .grid.three,
+  .grid.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .scroll-section {
@@ -1036,6 +1049,15 @@ footer {
   .story-photo,
   .team-photo {
     height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .grid.four,
+  .grid.three,
+  .grid.two {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1128,6 +1150,13 @@ footer {
 .page-login input::placeholder,
 .page-register input::placeholder {
   color: #666;
+}
+
+.page-login .meta a,
+.page-register .meta a {
+  font-weight: 700;
+  text-decoration: underline;
+  color: var(--primary);
 }
 
 [data-theme="dark"] .page-login form,
