@@ -1,57 +1,76 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - Counselor</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
-  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="apple-touch-icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
 </head>
+
 <body class="page-login">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <main id="main-content" class="section">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 14px;">
-        <a class="brand" href="index.html"><span class="logo-mark">C</span> Counselor</a>
-        <button class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
-          <span class="theme-icon">🌙</span>
-        </button>
-      </div>
-      <h2>Login</h2>
-      <p class="lead">Access your counselor dashboard and continue your progress plan.</p>
-      <div class="grid two">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+
+      <div class="auth-card-wrap">
         <form id="loginForm">
+          <a class="brand" href="index.html"><span class="logo-mark">C</span> Counselor</a>
+          <h2>Login</h2>
+          <p class="lead auth-lead">Access
+            your counselor dashboard and continue your progress plan.</p>
+
           <label for="loginEmail">Email</label>
           <input id="loginEmail" type="email" required />
 
           <label for="loginPassword">Password</label>
           <input id="loginPassword" type="password" required />
 
+          <div class="form-options">
+            <label class="checkbox-row" style="margin-bottom: 0;">
+              <input type="checkbox" id="rememberMe"> Remember me
+            </label>
+            <a href="#" class="meta">Forgot Password?</a>
+          </div>
+
           <button type="submit">Login</button>
+
+          <div class="social-login-desc">Or login with</div>
+          <div class="social-btns">
+            <button type="button" class="social-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12.48 10.92v3.28h7.84c-.24 1.84-.908 3.152-1.928 4.176-1.248 1.248-3.232 2.536-6.4 2.536-5.144 0-9.28-4.176-9.28-9.28s4.136-9.28 9.28-9.28c2.8 0 4.944 1.056 6.352 2.36l2.36-2.36C18.424 1.488 15.656 0 12.08 0 5.488 0 0 5.488 0 12s5.488 12 12.08 12c3.456 0 6.352-1.056 8.544-3.28 2.224-2.224 2.924-5.328 2.924-7.8 0-.48-.048-.96-.12-1.44H12.48z" />
+              </svg>
+              Google
+            </button>
+            <button type="button" class="social-btn">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12.073-12.073-12.073s-12.073 5.373-12.073 12.073c0 5.99 4.388 10.954 10.13 11.855v-8.385H7.078v-3.47h3.052V9.435c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+              Facebook
+            </button>
+          </div>
+
           <p id="loginMsg" class="msg"></p>
-          <p class="meta" style="text-align: center; margin-top: 8px;">
+          <p class="meta" style="text-align: center; margin-top: 18px;">
             New here? <a href="register.html">Create an account</a>
           </p>
         </form>
-        <article class="card">
-          <img class="section-image" src="assets/images/login-support.svg" alt="Counselor support login visual" />
-          <h3>Inside Your Dashboard</h3>
-          <p>Track counseling milestones, next-session priorities, and accountability actions in one place.</p>
-          <p>Review your progress history and focus on the highest-impact career tasks every week.</p>
-        </article>
       </div>
     </div>
   </main>
 
   <script src="script.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
