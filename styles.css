@@ -546,6 +546,10 @@ button:hover {
   padding-left: 20px;
 }
 
+.card .btn {
+  margin-top: 16px;
+}
+
 .icon-badge {
   width: 56px;
   height: 56px;
