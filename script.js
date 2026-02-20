@@ -212,6 +212,12 @@ if (registerForm) {
       return;
     }
 
+    const terms = document.getElementById("regTerms");
+    if (terms && !terms.checked) {
+      showMessage(msg, "Please agree to the Terms and Conditions.", "error");
+      return;
+    }
+
     const users = getUsers();
     if (users.find((u) => u.email === email)) {
       showMessage(msg, "Email already exists.", "error");
