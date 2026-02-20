@@ -777,8 +777,23 @@ textarea {
 }
 
 .accordion-item.active .accordion-panel {
-  max-height: 140px;
+  max-height: 1000px;
   padding-bottom: 14px;
+}
+
+.accordion-trigger:hover {
+  background-color: var(--accent);
+  cursor: pointer;
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg);
 }
 
 .map-wrap iframe {
