@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <rect width="900" height="600" fill="#153047"/>
+  <rect x="70" y="70" width="760" height="460" rx="22" fill="#ffffff" opacity="0.95"/>
+  <text x="450" y="235" text-anchor="middle" font-family="Segoe UI, Arial" font-size="48" fill="#153047">Student Success</text>
+  <text x="450" y="295" text-anchor="middle" font-family="Segoe UI, Arial" font-size="30" fill="#129a78">Meera T.</text>
+  <text x="450" y="355" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" fill="#3b5d73">Product Operations Shift</text>
+</svg>
