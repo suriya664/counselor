@@ -623,7 +623,15 @@ form {
 
 .page-login .container,
 .page-register .container {
-  width: min(1300px, 95%);
+  width: min(1100px, 92%);
+}
+
+.page-login .grid.two,
+.page-register .grid.two {
+  grid-template-columns: minmax(0, 420px) minmax(0, 520px);
+  justify-content: center;
+  gap: 24px;
+  align-items: start;
 }
 
 .page-login form {
@@ -1121,7 +1129,9 @@ footer {
 .page-register .theme-toggle {
   background: rgba(255, 255, 255, 0.9);
   border-color: rgba(255, 255, 255, 0.8);
-  position: relative;
+  position: fixed;
+  top: 24px;
+  right: 24px;
   z-index: 10;
 }
 
@@ -1216,6 +1226,35 @@ footer {
 
 .page-register {
   --register-bg-image: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1700&q=80");
+}
+
+@media (max-width: 1020px) {
+  .page-login main,
+  .page-register main {
+    align-items: flex-start;
+    padding: 48px 0;
+  }
+
+  .page-login .container,
+  .page-register .container {
+    width: min(600px, 92%);
+  }
+
+  .page-login .grid.two,
+  .page-register .grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  .page-login .card,
+  .page-register .card {
+    display: none;
+  }
+
+  .page-login .theme-toggle,
+  .page-register .theme-toggle {
+    top: 16px;
+    right: 16px;
+  }
 }
 
 @media (max-width: 920px) {
