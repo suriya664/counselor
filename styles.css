@@ -623,7 +623,16 @@ form {
 
 .page-login .container,
 .page-register .container {
-  width: min(1100px, 92%);
+  width: min(480px, 92%);
+}
+
+.page-login main,
+.page-register main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 32px 0;
+  box-sizing: border-box;
 }
 
 .page-login .grid.two,
@@ -651,7 +660,7 @@ form {
   margin-bottom: 12px;
 }
 
-.page-about .card p + .btn {
+.page-about .card p+.btn {
   margin-top: 12px;
 }
 
@@ -1229,6 +1238,7 @@ footer {
 }
 
 @media (max-width: 1020px) {
+
   .page-login main,
   .page-register main {
     align-items: flex-start;
